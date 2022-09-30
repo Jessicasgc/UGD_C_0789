@@ -19,4 +19,8 @@ class Pegawai extends Model
         'gender',
         'status',
         ];
+
+        public function departemen(){
+            return $this->hasOne(Departemen::class, 'id','id_departemen');
+         }
 }

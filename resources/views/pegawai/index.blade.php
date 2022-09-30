@@ -50,8 +50,8 @@
                                             <td class="text-center">{{$item->id_departemen }}</td>
                                             <td class="text-center">{{$item->email }}</td>
                                             <td class="text-center">{{$item->telepon }}</td>
-                                            <td class="text-center">{{$item->gender }}</td>
-                                            <td class="text-center">{{$item->status }}</td>
+                                            <td class="text-center">{{($item->gender) == 1 ? "wanita" : "pria" }}</td>
+                                            <td class="text-center">{{($item->status) == 1 ? "aktif" : "tidak aktif" }}</td>
                                     </tr>
                                     @empty
                                     <div class="alert alert-danger">
