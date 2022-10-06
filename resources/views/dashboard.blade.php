@@ -136,6 +136,9 @@ navbar-light">
 }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
+    <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+    @yield('script')
 </body>
 
 </html>
