@@ -37,8 +37,8 @@ class PegawaiController extends Controller
             $this->validate($request, [ 'nomor_induk_pegawai'=> 'required',
                 'nama_pegawai'=> 'required',
                 'id_departemen'=> 'required',
-                'email'=> 'required',
-                'telepon'=> 'required',
+                'email'=> 'unique:App\Models\Pegawai|email|required',
+                'telepon' => 'required|regex:/^([0-9]{10,13}$)/i',
                 'gender'=> 'required',
                 'status'=> 'required'
                 ]);
@@ -84,8 +84,8 @@ class PegawaiController extends Controller
             $this->validate($request, [ 'nomor_induk_pegawai'=> 'required',
             'nama_pegawai'=> 'required',
             'id_departemen'=> 'required',
-            'email'=> 'required',
-            'telepon'=> 'required',
+            'email'=> 'unique:App\Models\Pegawai|email|required',
+            'telepon' => 'required|regex:/^([0-9]{10,13}$)/i',
             'gender'=> 'required',
             'status'=> 'required',
             ]);

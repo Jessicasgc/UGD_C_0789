@@ -75,7 +75,7 @@
                                     <input type="text"
                                         class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}"
-                                        placeholder="Masukkan Email" required|email>
+                                        placeholder="Masukkan Email" >
                                     @error('email')
                                     
                                     <div class="invalid-feedback">

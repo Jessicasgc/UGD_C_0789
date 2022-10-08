@@ -50,7 +50,7 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label class="font-weight-bold">Nama Pegawai</label>
-                                    <input type="text" maxLength="15" class="form-control @error('nama_pegawai') is-invalid @enderror"
+                                    <input type="text" class="form-control @error('nama_pegawai') is-invalid @enderror"
                                         name="nama_pegawai" value="{{ old('nama_pegawai') }}"
                                         placeholder="Masukkan Nama Pegawai" maxLength="15"required>
                                     @error('nama_pegawai')
@@ -76,8 +76,7 @@
                                     <input type="text" 
                                         class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email') }}"
-                                        
-                                        placeholder="...@email.com" required|email>
+                                        placeholder="...@email.com">
                                         @error('email')
                                         
                                     
@@ -90,7 +89,7 @@
                                     <label class="font-weight-bold" >Telepon</label>
                                     <input type="tel"
                                         class="form-control @error('telepon') is-invalid @enderror"
-                                        name="telepon" value="{{ old('telepon') }}"
+                                        name="telepon" value="{{ old('telepon')}}"
                                         placeholder="Masukkan Telepon" minLength="10" maxLength="13"required>
                                     @error('telepon')
                                     <div class="invalid-feedback">
