@@ -29,6 +29,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                    <a href="{{ route('pegawai.create') }}"
+                                class="btn btn-md btn-success mb-3">TAMBAH PEGAWAI</a>
                         <div class="table-responsive p-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
@@ -52,7 +54,15 @@
                                             <td class="text-center">{{$item->telepon }}</td>
                                             <td class="text-center">{{($item->gender) == 1 ? "wanita" : "invalid", ($item->gender) == 0 ? "pria" : "invalid" }}</td>
                                             <td class="text-center">{{($item->status) == 1 ? "aktif" : "invalid", ($item->gender) == 0 ? "tidak aktif" : "invalid"}}</td>
-                                    </tr>
+                                            <td class="text-center">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('pegawai.destroy', $item->id) }}" method="POST">
+                                                <a href="{{route('pegawai.edit', $item->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
+                                                </td>
+                                        </tr>
                                     @empty
                                     <div class="alert alert-danger">
                                         Data Pegawai belum tersedia
